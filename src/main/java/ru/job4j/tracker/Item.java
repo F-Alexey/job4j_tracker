@@ -32,10 +32,4 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-
-    public static void main(String[] args) {
-        Item first = new Item();
-        Item second = new Item("Ivan");
-        Item third = new Item(1, "Anton");
-    }
 }
