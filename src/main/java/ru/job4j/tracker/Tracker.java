@@ -22,8 +22,7 @@ public class Tracker {
                 temp++;
             }
         }
-        all = Arrays.copyOf(all, temp);
-        return all;
+        return Arrays.copyOf(all, temp);
     }
 
     public Item[] findByName(String key) {
@@ -35,8 +34,7 @@ public class Tracker {
                 temp++;
             }
         }
-        find = Arrays.copyOf(find, temp);
-        return find;
+        return Arrays.copyOf(find, temp);
     }
 
     public Item findById(int id) {
