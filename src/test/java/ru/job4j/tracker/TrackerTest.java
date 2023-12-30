@@ -41,21 +41,6 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenTestFindAllOneNull() {
-        Tracker tracker = new Tracker();
-        Item first = new Item("First");
-        Item second = new Item(null);
-        Item third = new Item("Third");
-        tracker.add(first);
-        tracker.add(second);
-        tracker.add(third);
-        Item result = tracker.findAll()[0];
-        assertThat(result.getName()).isEqualTo(first.getName());
-        result = tracker.findAll()[1];
-        assertThat(result.getName()).isEqualTo(third.getName());
-    }
-
-    @Test
     public void whenTestFindByNameCheckArrayLength() {
         Tracker tracker = new Tracker();
         Item first = new Item("First");
