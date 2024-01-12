@@ -9,5 +9,6 @@ public class Paint {
         Paint context = new Paint();
         context.draw(new Triangle());
         context.draw(new Square());
+
     }
 }
