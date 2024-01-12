@@ -7,7 +7,6 @@ public class Triangle implements Shape {
         return    "   ^    " + ln
                 + " /   \\ " + ln
                 + "/_____\\" + ln;
-
     }
 }
 
