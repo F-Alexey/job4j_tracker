@@ -5,7 +5,7 @@ import ru.job4j.tracker.Item;
 import ru.job4j.tracker.output.Output;
 import ru.job4j.tracker.Tracker;
 
-public class FindAll implements User {
+public class FindAll implements UserAction {
 
     private final Output output;
 
