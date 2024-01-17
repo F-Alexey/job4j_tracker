@@ -189,7 +189,7 @@ class StartUITest {
     void whenInvalidExit() {
         ru.job4j.tracker.output.Output output = new StubOutput();
         Input input = new MockInput(
-                new String[] {"9", "0", "Item name", "1"}
+                new String[] {"9", "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{
