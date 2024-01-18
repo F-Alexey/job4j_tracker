@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import ru.job4j.tracker.action.*;
+import ru.job4j.tracker.console.Input;
 import ru.job4j.tracker.console.Output;
 import ru.job4j.tracker.console.Validate;
 
@@ -30,11 +31,12 @@ public class StartUI {
         for (int index = 0; index < actions.length; index++) {
             output.println(index + ". " + actions[index].name());
         }
+
     }
 
     public static void main(String[] args) {
         ru.job4j.tracker.output.Output output = new Output();
-        ru.job4j.tracker.input.Input input = new Validate();
+        ru.job4j.tracker.input.Input input = new Validate(output, new Input());
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new Create(output),
