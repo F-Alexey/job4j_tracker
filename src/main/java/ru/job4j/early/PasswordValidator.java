@@ -28,6 +28,9 @@ public class PasswordValidator {
             if (!Character.isLetterOrDigit(password.charAt(i))) {
                 isOneSign = true;
             }
+            if (isOneUppercase && isOneLowercase && isOneDigit && isOneSign) {
+                break;
+            }
         }
         if (!isOneUppercase) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
@@ -41,9 +44,9 @@ public class PasswordValidator {
         if (!isOneSign) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
-        StringBuilder checkForbidden = new StringBuilder(password.toLowerCase());
-        for (int i = 0; i < PasswordValidator.FORBIDDEN.length; i++) {
-            if (checkForbidden.indexOf(PasswordValidator.FORBIDDEN[i]) > 0) {
+        String checkForbidden = password.toLowerCase();
+        for (String word : FORBIDDEN) {
+            if (checkForbidden.contains(word)) {
                 throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
             }
         }
