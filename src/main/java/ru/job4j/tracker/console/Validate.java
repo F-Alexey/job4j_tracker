@@ -3,7 +3,6 @@ package ru.job4j.tracker.console;
 import ru.job4j.tracker.input.Input;
 import ru.job4j.tracker.output.Output;
 
-
 public class Validate implements Input {
     private final Output output;
     private final Input input;
