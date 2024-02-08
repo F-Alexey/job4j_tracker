@@ -1,4 +1,4 @@
-package ru.job4j.queque;
+package ru.job4j.queue;
 
 import java.util.Queue;
 
@@ -15,13 +15,13 @@ public class AppleStore {
         for (int i = 0; i < count - 1; i++) {
             queue.poll();
         }
-        return queue.element().name();
+        return queue.poll().name();
     }
 
     public String getFirstUpsetCustomer() {
         for (int i = 0; i < count; i++) {
             queue.poll();
         }
-        return queue.element().name();
+        return queue.poll().name();
     }
 }
