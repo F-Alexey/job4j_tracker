@@ -13,14 +13,15 @@ public class BankService {
     }
 
     public void deleteUser(String passport) {
-        users.remove(findByPassport(passport));
+        users.remove(new User(passport, ""));
     }
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
+        List<Account> userAccount = users.get(user);
         if (user != null) {
-            if (!users.get(user).contains(account)) {
-                users.get(user).add(account);
+            if (!userAccount.contains(account)) {
+                userAccount.add(account);
             }
         }
     }
@@ -33,20 +34,18 @@ public class BankService {
                 break;
             }
         }
-        if (result == null) {
-            System.out.println("Пользователь с таким паспортом не найден в базе");
-        }
         return result;
     }
 
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
-        List<Account> account = getAccounts(user);
         Account result = null;
-        if (account != null) {
+        if (getAccounts(user) != null) {
+            List<Account> account = getAccounts(user);
             for (Account value : account) {
                 if (value.getRequisite().equals(requisite)) {
                     result = value;
+                    break;
                 }
             }
         }
