@@ -7,6 +7,7 @@ public class UsageMap {
         HashMap<String, String> map = new HashMap<>();
         map.put("fedossev.a@gmail.com", "Fedoseev Aleksey");
         map.put("testmail@gmail.com", "Test User");
+        map.put("testmail@gmail.com", "Test User");
         map.put("company.help@gmail.com", "Company Engineer");
         System.out.println("Вывод всех элементов коллекции:");
         int i = 0;
