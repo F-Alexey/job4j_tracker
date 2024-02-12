@@ -36,11 +36,8 @@ public class AnalyzeByMap {
         List<Label> result = new ArrayList<>();
         for (Pupil student : pupils) {
             for (Subject subject : student.subjects()) {
-                if (!map.containsKey(subject.name())) {
-                    map.put(subject.name(), subject.score());
-                } else {
-                    map.put(subject.name(), map.get(subject.name()) + subject.score());
-                }
+               map.put(subject.name(), !map.containsKey(subject.name())
+                        ? subject.score() :  map.get(subject.name()) + subject.score());
             }
         }
         for (String key : map.keySet()) {
@@ -61,8 +58,13 @@ public class AnalyzeByMap {
             answer.add(new Label(student.name(), sum));
             sum = 0;
         }
-        Collections.sort(answer);
-        return answer.get(answer.size() - 1);
+        Label result = answer.get(0);
+        for (Label bestStudent : answer) {
+            if (bestStudent.score() > result.score()) {
+                result = bestStudent;
+            }
+        }
+        return result;
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
@@ -82,8 +84,13 @@ public class AnalyzeByMap {
             Label answer = new Label(key, value);
             result.add(answer);
         }
-        Collections.sort(result);
-        return result.get(result.size() - 1);
+        Label bestSubject = result.get(0);
+        for (Label thatSubject : result) {
+            if (thatSubject.score() > bestSubject.score()) {
+                bestSubject = thatSubject;
+            }
+        }
+        return bestSubject;
     }
 
 }
