@@ -36,8 +36,7 @@ public class AnalyzeByMap {
         List<Label> result = new ArrayList<>();
         for (Pupil student : pupils) {
             for (Subject subject : student.subjects()) {
-               map.put(subject.name(), !map.containsKey(subject.name())
-                        ? subject.score() :  map.get(subject.name()) + subject.score());
+                map.put(subject.name(), subject.score() + map.getOrDefault(subject.name(), 0));
             }
         }
         for (String key : map.keySet()) {
