@@ -2,9 +2,18 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает модель пользователя
+ */
+
 public class User {
     private String passport;
     private String username;
+    /**
+     * Хранение данных о пользователе в полях:
+     * @param passport пасспорт
+     * @param username имя
+     */
 
     public User(String passport, String username) {
         this.passport = passport;
@@ -27,6 +36,9 @@ public class User {
         this.username = username;
     }
 
+    /**
+     * Переопределение метода equals
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
